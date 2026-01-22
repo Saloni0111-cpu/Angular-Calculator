@@ -6,29 +6,29 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Calculator';
   display: string = '';
 
-  input(value: string) {
+  appendInput(value: string): void {
     this.display += value;
   }
 
-  clear() {
-      this.display = '';
+  clear(): void {
+    this.display = "";
   }
 
-  delete() {
-    this.display = this.display.slice(0,-1);
+  deleteOne(): void {
+    this.display = this.display.slice(0, -1);
   }
-
-  calculate() {
+  calculate(): void{
     try {
-      this.display = eval(this.display);
-    } catch(error) {
-      this.display = 'Error';
+this.display = eval(this.display);
+    }
+    catch(e) {
+        this.display = 'Error';
     }
   }
 }

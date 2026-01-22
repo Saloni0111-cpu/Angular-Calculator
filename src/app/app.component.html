@@ -1,37 +1,38 @@
-<h1>My first Angular pro</h1>
+<h1 class="text-success">My first Angular pro</h1>
 
 
 
 <div class="result"></div>
-<div class="calcContainer">
+<div class="calcContainer ">
+  <input type="text" class="form-control mb-3 text-right" [value]="display" readonly>
   <div id="buttonContainer">
-    <button class="numbers">AC</button>
-    <button class="numbers">%</button>
-    <button class="numbers">Del</button>
-    <button class="numbers">/</button>
+    <button class="numbers" (click)="clear()">AC</button>
+    <button class="numbers" (click)="appendInput('%')">%</button>
+    <button class="numbers" (click)="deleteOne()">Del</button>
+    <button class="numbers" (click)="appendInput('/')">/</button>
   </div>
   <div id="buttonContainer">
-    <button class="numbers">7</button>
-    <button class="numbers">8</button>
-    <button class="numbers">9</button>
-    <button class="numbers">*</button>
+    <button class="numbers" (click)="appendInput('7')">7</button>
+    <button class="numbers" (click)="appendInput('8')">8</button>
+    <button class="numbers" (click)="appendInput('9')">9</button>
+    <button class="numbers" (click)="appendInput('*')">*</button>
   </div>
   <div id="buttonContainer">
-    <button class="numbers">4</button>
-    <button class="numbers">5</button>
-    <button class="numbers">6</button>
-    <button class="numbers">-</button>
+    <button class="numbers" (click)="appendInput('4')">4</button>
+    <button class="numbers" (click)="appendInput('5')">5</button>
+    <button class="numbers" (click)="appendInput('6')">6</button>
+    <button class="numbers" (click)="appendInput('-')">-</button>
   </div>
   <div id="buttonContainer">
-    <button class="numbers">1</button>
-    <button class="numbers">2</button>
-    <button class="numbers">3</button>
-    <button class="numbers">+</button>
+    <button class="numbers" (click)="appendInput('1')">1</button>
+    <button class="numbers" (click)="appendInput('2')">2</button>
+    <button class="numbers" (click)="appendInput('3')">3</button>
+    <button class="numbers" (click)="appendInput('+')">+</button>
   </div>
   <div id="buttonContainer">
-    <button class="numbers">00</button>
-    <button class="numbers">0</button>
-    <button class="numbers">.</button>
-    <button class="numbers">=</button>
+    <button class="numbers" (click)="appendInput('00')">00</button>
+    <button class="numbers" (click)="appendInput('0')">0</button>
+    <button class="numbers" (click)="appendInput('.')">.</button>
+    <button class="numbers" (click)="calculate()">=</button>
   </div>
 </div>
